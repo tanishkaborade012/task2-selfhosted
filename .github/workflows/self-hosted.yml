@@ -17,9 +17,11 @@ jobs:
         run: echo "Hello from self-hosted runner"
 
       - name: Print Environment Variable
-        run: echo "Environment is $APP_ENVIRONMENT"
+        run: echo "Environment is $env:APP_ENVIRONMENT"
 
       - name: Use Secret
         env:
           MY_SECRET: ${{ secrets.NEW_SECRET }}
-        run: echo "Secret injected successfully"
+        run: | 
+          echo "Secret injected successfully"
+          echo "Secret value is $env:MY_SECRET"
