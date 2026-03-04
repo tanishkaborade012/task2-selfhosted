@@ -9,19 +9,16 @@ jobs:
   demo:
     runs-on: self-hosted
 
-    env:
-      APP_ENVIRONMENT: production
-
     steps:
       - name: Print Simple Message
         run: echo "Hello from self-hosted runner"
 
       - name: Print Environment Variable
-        run: echo "Environment is $env:APP_ENVIRONMENT"
+        run: echo "Environment is ${{ vars.APP_ENVIRONMENT }}"
 
       - name: Use Secret
         env:
           MY_SECRET: ${{ secrets.NEW_SECRET }}
-        run: | 
+        run: |
           echo "Secret injected successfully"
           echo "Secret value is $env:MY_SECRET"
