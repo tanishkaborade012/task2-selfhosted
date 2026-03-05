@@ -7,9 +7,8 @@ on:
 
 jobs:
   demo:
-    runs-on: 
-      self-hosted:
-       labels: ITT-TANKISHKA-A
+    runs-on: ITT-TANKISHKA-A 
+      
 
     steps:
       - name: Print Simple Message
